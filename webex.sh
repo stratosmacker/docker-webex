@@ -2,6 +2,7 @@
 
 docker rm --force webex >/dev/null 2>&1
 docker build --tag=webex .
+xhost local:root
 docker run -ti \
 	--env DISPLAY=unix$DISPLAY \
 	--privileged \
