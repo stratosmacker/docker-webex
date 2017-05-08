@@ -12,6 +12,6 @@ docker run -it \
         --volume=$XSOCK:$XSOCK:rw \
         --volume=$XAUTH:$XAUTH:rw \
         --env="XAUTHORITY=${XAUTH}" \
-        --env="DISPLAY=:0" \
+        --env="DISPLAY=$DISPLAY" \
         --user="webex" \
         webex
