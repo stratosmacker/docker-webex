@@ -8,13 +8,11 @@ This will build the image and execute firefox in the resulting container
 ready to go to the WebEx site.
 
 
-N.B.
-*docker --privileged will give extended privileges to this container and it's not
-recommended!*
 
 Status
 ------
 
+* Use xauth and Firefox 50
 * Audio and various sharing options work. 
 * Webcam video is limited to view-only. This is a limitation on the
   Linux client.

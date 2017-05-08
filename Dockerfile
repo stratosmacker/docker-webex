@@ -1,5 +1,5 @@
 FROM ubuntu:vivid
-MAINTAINER Federico G. Schwindt <fgsch@lodoss.net>
+MAINTAINER Natale Vinto <ebballon@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 RUN dpkg --add-architecture i386 
 RUN apt-get update
