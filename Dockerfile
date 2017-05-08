@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu:vivid
 MAINTAINER Federico G. Schwindt <fgsch@lodoss.net>
 ENV DEBIAN_FRONTEND noninteractive
 RUN dpkg --add-architecture i386 
