@@ -1,7 +1,5 @@
 #!/bin/bash
 
-docker rm --force webex >/dev/null 2>&1
-docker build --tag=webex .
 
 XSOCK=/tmp/.X11-unix
 XAUTH=/tmp/.docker.xauth

@@ -1,5 +1,5 @@
-FROM ubuntu:trusty
-MAINTAINER Federico G. Schwindt <fgsch@lodoss.net>
+FROM ubuntu:vivid
+MAINTAINER Natale Vinto <ebballon@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 RUN dpkg --add-architecture i386 
 RUN apt-get update
