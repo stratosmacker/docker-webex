@@ -19,4 +19,8 @@ docker run -it \
         --env="XAUTHORITY=${XAUTH}" \
         --env="DISPLAY=$DISPLAY" \
         --user="webex" \
+        --name=webex \
+        --privileged \
+        --net=host \
+        --rm \
         webex
