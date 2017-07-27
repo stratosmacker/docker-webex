@@ -9,4 +9,4 @@ RUN apt-get install -y firefox:i386 icedtea-7-plugin:i386 \
 RUN useradd -ms /bin/bash webex
 USER webex
 WORKDIR /home/webex
-CMD /usr/bin/firefox
+CMD /usr/bin/firefox --url https://sw.webex.com/
