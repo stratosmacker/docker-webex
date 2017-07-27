@@ -16,6 +16,7 @@ xhost local:root
 docker run -it \
         --volume=$XSOCK:$XSOCK:rw \
         --volume=$XAUTH:$XAUTH:rw \
+        --volume=/home/webex/
         --env="XAUTHORITY=${XAUTH}" \
         --env="DISPLAY=$DISPLAY" \
         --user="webex" \
