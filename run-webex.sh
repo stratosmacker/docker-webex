@@ -24,4 +24,6 @@ docker run -it \
         --privileged \
         --net=host \
         --rm \
-        webex
+        webex & \
+        pauvolumecontrol & \
+        /usr/bin/chromium --profile-directory=Default --app-id=knipolnnllmklapflnccelgolnpehhpl
