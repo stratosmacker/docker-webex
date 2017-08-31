@@ -12,7 +12,8 @@ fi
 
 xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 xhost local:root
-
+killall firefox
+/usr/bin/chromium --profile-directory=Default --app-id=knipolnnllmklapflnccelgolnpehhpl &
 docker run -it \
         --volume=$XSOCK:$XSOCK:rw \
         --volume=$XAUTH:$XAUTH:rw \
@@ -24,6 +25,4 @@ docker run -it \
         --privileged \
         --net=host \
         --rm \
-        webex & \
-        pauvolumecontrol & \
-        /usr/bin/chromium --profile-directory=Default --app-id=knipolnnllmklapflnccelgolnpehhpl
+        webex

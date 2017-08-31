@@ -1,5 +1,5 @@
 FROM ubuntu:vivid
-MAINTAINER Natale Vinto <ebballon@gmail.com>
+MAINTAINER Jesse Osiecki <jesse.osiecki@solarwinds.com>
 ENV DEBIAN_FRONTEND noninteractive
 RUN dpkg --add-architecture i386 
 RUN apt-get update
@@ -15,8 +15,8 @@ RUN useradd -ms /bin/bash webex
 USER webex
 WORKDIR /home/webex
 #ADD ./jre1.7.0_80  jre
-ADD ./jre1.8.0_144  jre
-RUN mkdir -p ~/.mozilla/plugins/
-RUN ln -sf $HOME/jre/lib/i386/libnpjp2.so $HOME/.mozilla/plugins/
+#ADD ./jre1.8.0_144  jre
+#RUN mkdir -p ~/.mozilla/plugins/
+#RUN ln -sf $HOME/jre/lib/i386/libnpjp2.so $HOME/.mozilla/plugins/
 RUN rm -rf $HOME/.webex/
-CMD /usr/bin/firefox --url https://sw.webex.com/mw3100/mywebex/cmr/cmr.do?siteurl=sw&AT=join&username=humberto.amador
+CMD ["/usr/bin/firefox", "https://sw.webex.com/join/humberto.amador"]
