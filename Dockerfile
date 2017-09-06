@@ -19,4 +19,4 @@ WORKDIR /home/webex
 #RUN mkdir -p ~/.mozilla/plugins/
 #RUN ln -sf $HOME/jre/lib/i386/libnpjp2.so $HOME/.mozilla/plugins/
 RUN rm -rf $HOME/.webex/
-CMD ["/usr/bin/firefox", "https://sw.webex.com/join/humberto.amador"]
+CMD ["/usr/bin/firefox", "https://sw.webex.com/"]
