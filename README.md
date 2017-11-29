@@ -1,19 +1,12 @@
 docker-webex
 ============
 
-Run [Cisco WebEx][1] inside docker.
+Before Building:
 
-To use it simply clone this repository and run the `webex.sh` script.<br/>
+Download the jre
+http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
+save it as jre-linux-i586.tar.gz
 
-This will build the image and execute firefox in the resulting container
-ready to go to the WebEx site.
+then run ./build.sh to build
 
-Status
-------
-
-* Use xauth and updated Firefox from Vivid
-* Audio and various sharing options work.
-* Webcam video is limited to view-only. This is a limitation on the
-  Linux client.
-
-[1]: https://www.webex.com/test-meeting.html
+./run-webex.sh will run Webex. You can copy it to your path
