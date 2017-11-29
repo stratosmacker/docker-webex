@@ -1,5 +1,7 @@
 #!/bin/bash
 
+docker volume create webex-home
+
 XSOCK=/tmp/.X11-unix
 XAUTH=/tmp/.docker.xauth
 touch $XAUTH
@@ -12,12 +14,11 @@ fi
 
 xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 xhost local:root
-killall firefox
-/usr/bin/chromium --profile-directory=Default --app-id=knipolnnllmklapflnccelgolnpehhpl &
 docker run -it \
+        -v /dev/snd:/dev/snd \
         --volume=$XSOCK:$XSOCK:rw \
         --volume=$XAUTH:$XAUTH:rw \
-        --volume="/home/webex/" \
+        --volume=webex-home:/home/webex/ \
         --env="XAUTHORITY=${XAUTH}" \
         --env="DISPLAY=$DISPLAY" \
         --user="webex" \
