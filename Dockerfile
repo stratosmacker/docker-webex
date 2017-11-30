@@ -18,7 +18,7 @@ RUN apt-get install -y libc6:i386 libncurses5:i386 libstdc++6:i386 wget bzip2 \
     libxmu6:i386 \
     libxv1:i386 \
     libasound2-plugins:i386
-RUN wget https://ftp.mozilla.org/pub/firefox/releases/51.0/linux-i686/en-US/firefox-51.0.tar.bz2
+RUN wget https://ftp.mozilla.org/pub/firefox/releases/50.0/linux-i686/en-US/firefox-50.0.tar.bz2
 RUN mkdir -p /opt/webex/
 ADD jre-linux-i586.tar.gz /
 RUN mv /jre* /opt/webex/jre

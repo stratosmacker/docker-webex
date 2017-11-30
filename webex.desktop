@@ -2,7 +2,7 @@
 [Desktop Entry]
 Name=WebEx
 Comment=Run WebEx into a Docker Container
-Exec=/usr/local/bin/run-webex.sh
+Exec=~/.local/bin/run-webex.sh
 Icon=/usr/share/icons/webex.png
 Terminal=true
 Type=Application
