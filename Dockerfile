@@ -33,6 +33,7 @@ ADD firefox.sh /opt/webex/firefox.sh
 RUN chmod a+x /opt/webex/firefox.sh
 RUN apt-get install -y libcurl3:i386
 RUN ln -s /opt/webex/firefox.sh /usr/local/bin/firefox-i386
+RUN apt-get install -y alsamixergui
 RUN useradd -ms /bin/bash webex
 USER webex
 WORKDIR /home/webex
