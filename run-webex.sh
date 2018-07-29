@@ -1,15 +1,16 @@
 #!/bin/bash
 
 docker volume create webex-home
-
+uid=`id -u`
 XSOCK=/tmp/.X11-unix
 XAUTH=/tmp/.docker.xauth
 touch $XAUTH
 
 # Ensure xauth has been created for :0
-if ! xauth list | grep -q "$(hostname --short)/unix:0"; then
+if  ! xauth list | grep -q "$(hostname --short)/unix:0" \
+    && ! xauth list | grep -q "$(hostname)/unix:0"; then
     touch ~/.Xauthority
-    xauth add ${DISPLAY} . $(mcookie)
+    xauth add ${DISPLAY} . $(mcookie) && echo "made new cookie"
 fi
 
 xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
@@ -19,6 +20,10 @@ docker run -it \
         --volume=$XSOCK:$XSOCK:rw \
         --volume=$XAUTH:$XAUTH:rw \
         --volume=webex-home:/home/webex/ \
+        -v /dev/shm:/dev/shm \
+        -v /etc/machine-id:/etc/machine-id \
+        -v /run/user/$uid/pulse:/run/user/$uid/pulse \
+        -v /var/lib/dbus:/var/lib/dbus \
         --env="XAUTHORITY=${XAUTH}" \
         --env="DISPLAY=$DISPLAY" \
         --user="webex" \
