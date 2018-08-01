@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 MAINTAINER Jesse Osiecki <jesse.osiecki@solarwinds.com>
 ENV DEBIAN_FRONTEND noninteractive
 RUN dpkg --add-architecture i386 
@@ -11,7 +11,7 @@ RUN apt-get install -y libc6:i386 libncurses5:i386 libstdc++6:i386 wget bzip2 \
     libxtst6:i386 \
     libcanberra-gtk-module:i386 \
     libcanberra-gtk3-module:i386 \
-    #topmenu-gtk3:i386 \
+    topmenu-gtk3:i386 \
     libpangoxft-1.0-0:i386 \
     libxft2:i386 \
     libpangox-1.0-0:i386 \
